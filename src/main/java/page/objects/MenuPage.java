@@ -3,7 +3,9 @@ package page.objects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class MenuPage {
+import selenium.utils.SeleniumWrappers;
+
+public class MenuPage extends SeleniumWrappers{
 	
 	public WebDriver driver;
 	
@@ -15,9 +17,10 @@ public class MenuPage {
 	public By loginLink = By.linkText("Login");
 	public By shopLink = By.linkText("BOOKS");
 	
-	public void navigateTo(By locator) {
+/*	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
-	}
+	} */
+	
 }
 
 
