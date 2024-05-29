@@ -28,6 +28,7 @@ public class LoginTest extends BaseTest{
 		
 		assertTrue(loginPage.checkMsgIsDisplayed(loginPage.successLoginMsg));
 		//loginPage.logoutFromApp();
+		loginPage.click(loginPage.logoutBtn);
 		
 	
 	}
