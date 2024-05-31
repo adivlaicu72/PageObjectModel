@@ -12,8 +12,8 @@ import selenium.utils.BaseTest;
 
 public class ContactFormTest extends BaseTest {
 	
-	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credentials.properties");
-	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credentials.properties");
+	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credential.properties");
+	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credential.properties");
 
 	
 	@Test
