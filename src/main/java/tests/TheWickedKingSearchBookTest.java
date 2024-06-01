@@ -13,17 +13,18 @@ import selenium.utils.BaseTest;
 
 public class TheWickedKingSearchBookTest extends BaseTest{
 
-	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credential.properties");
-	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credential.properties");
+   /*	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credential.properties");
+	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credential.properties"); 
+	*/
 	
 	@Test
 	public void theWickedKingSearchBookTest() {
 		MenuPage menuPage = new MenuPage(driver);
 		menuPage.click(menuPage.loginLink);
 		
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.loginInApp(USER, PASS);
-	
+		/*LoginPage loginPage = new LoginPage(driver);
+		loginPage.loginInApp(USER, PASS); */
+		
 		menuPage.click(menuPage.searchForm);
 		menuPage.sendKeys(menuPage.searchField, "King");
 		menuPage.click(menuPage.theWickedKingInPopup);
