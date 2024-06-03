@@ -50,7 +50,7 @@ public class SeleniumWrappers extends BaseTest{
 		
 	}
 	
-	public boolean checkPictureIsDisplayed(By locator) {
+	public boolean checkElementIsDisplayed(By locator) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 		return driver.findElement(locator).isDisplayed();
