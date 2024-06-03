@@ -34,10 +34,10 @@ public class TheWickedKingSearchBookTest extends BaseTest{
 		assertEquals(theWickedKingPage.getElementText(theWickedKingPage.category), "Category: New releases");
 		assertEquals(theWickedKingPage.getElementText(theWickedKingPage.productID), "Product ID: 1709");
 		
-		assertTrue(theWickedKingPage.checkPictureIsDisplayed(theWickedKingPage.theWickedKing1));
-		assertTrue(theWickedKingPage.checkPictureIsDisplayed(theWickedKingPage.theWickedKing2));
-		assertTrue(theWickedKingPage.checkPictureIsDisplayed(theWickedKingPage.theWickedKing3));
-		assertTrue(theWickedKingPage.checkPictureIsDisplayed(theWickedKingPage.theWickedKing4));
+		assertTrue(theWickedKingPage.checkElementIsDisplayed(theWickedKingPage.theWickedKing1));
+		assertTrue(theWickedKingPage.checkElementIsDisplayed(theWickedKingPage.theWickedKing2));
+		assertTrue(theWickedKingPage.checkElementIsDisplayed(theWickedKingPage.theWickedKing3));
+		assertTrue(theWickedKingPage.checkElementIsDisplayed(theWickedKingPage.theWickedKing4));
 		
 
 		}
