@@ -23,6 +23,9 @@ public class MenuPage extends SeleniumWrappers{
 	public By searchForm = By.cssSelector("div>form button");
 	public By searchField = By.cssSelector("input.search_field");
 	public By theWickedKingInPopup = By.cssSelector(".post_title>a[href='https://keybooks.ro/shop/the-wicked-king/']");
+	public By blogLink = By.linkText("BLOG");
+	public By aboutLink = By.linkText("ABOUT");
+	
 	
 /*	public void navigateTo(By locator) {
 		driver.findElement(locator).click();
