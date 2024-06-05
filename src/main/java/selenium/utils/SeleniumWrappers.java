@@ -5,6 +5,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -56,6 +57,18 @@ public class SeleniumWrappers extends BaseTest{
 		return driver.findElement(locator).isDisplayed();
 	}
 	
+	public void hoverElement(By locator) {
+		WebElement element  =  driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).perform();
+	}
 	
+	public void dragAndDrop(By locator, int x, int y) {
+		WebElement element  =  driver.findElement(locator);
+		Actions action = new Actions(driver);
+		action.moveToElement(element).clickAndHold(element).moveByOffset(x, y).release().perform();
+		
+	}	
+		
 	
 }
