@@ -1,11 +1,8 @@
 package tests;
 
 import static org.testng.Assert.assertEquals;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
 import framework.utils.PropertiesFileProcessor;
 import page.objects.LoginPage;
 import page.objects.MenuPage;
@@ -32,16 +29,16 @@ public class ShippingAdressTest extends BaseTest{
 		ShippingAddressPage shippingAddressPage = new ShippingAddressPage(driver);
 		shippingAddressPage.click(shippingAddressPage.shippingbilling);
 		shippingAddressPage.click(shippingAddressPage.shippingbillingAddButton);	
-	
-		Select country = new Select(driver.findElement(By.id("shipping_country")));
-		shippingAddressPage.click(shippingAddressPage.countryDropdown);
-		country.selectByIndex(41);
-		assertEquals(country.getFirstSelectedOption().getText(), "Canada");
 		
-		Select province = new Select(driver.findElement(By.id("shipping_state")));
+		Select selectedCountry = new Select(driver.findElement(shippingAddressPage.country));
+		shippingAddressPage.click(shippingAddressPage.countryDropdown);
+		selectedCountry.selectByIndex(41);
+		assertEquals(selectedCountry.getFirstSelectedOption().getText(), "Canada");
+		
+		Select selectedProvince = new Select(driver.findElement(shippingAddressPage.province));
 		shippingAddressPage.click(shippingAddressPage.provinceDropdown);
-		province.selectByValue("NL");
-		assertEquals(province.getFirstSelectedOption().getText(), "Newfoundland and Labrador");
+		selectedProvince.selectByValue("NL");
+		assertEquals(selectedProvince.getFirstSelectedOption().getText(), "Newfoundland and Labrador");
 		
 	}
 }

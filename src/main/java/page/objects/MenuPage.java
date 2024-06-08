@@ -27,6 +27,7 @@ public class MenuPage extends SeleniumWrappers{
 	public By aboutLink = By.linkText("ABOUT");
 	public By userPlaceholder = By.cssSelector("span[class='user_name']");
 	public By userSettings = By.cssSelector("a[class='icon icon-cog']");
+	public By blogSubMenuPostFormats = By.xpath("//a[contains(text(), 'Post Formats')]");
 	
 	
 	
