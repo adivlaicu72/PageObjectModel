@@ -25,6 +25,10 @@ public class MenuPage extends SeleniumWrappers{
 	public By theWickedKingInPopup = By.cssSelector(".post_title>a[href='https://keybooks.ro/shop/the-wicked-king/']");
 	public By blogLink = By.linkText("BLOG");
 	public By aboutLink = By.linkText("ABOUT");
+	public By userPlaceholder = By.cssSelector("span[class='user_name']");
+	public By userSettings = By.cssSelector("a[class='icon icon-cog']");
+	public By blogSubMenuPostFormats = By.xpath("//a[contains(text(), 'Post Formats')]");
+	
 	
 	
 /*	public void navigateTo(By locator) {
