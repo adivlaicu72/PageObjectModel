@@ -11,11 +11,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumWrappers extends BaseTest{
 
+	/*
+	 * 
+	 * 
+	 */
 	
 	
 	//WebElement element  =  driver.findElement(locator)
 	//element.click();
 	
+	/**
+	 * Wrapper method over selenium default click() enhanced with:
+	 * 1.waitForElementToBeVisible
+	 * 2. retry mechanism for NoSuchElement
+	 * @param locator
+	 */
 	public void click(By locator) {
 	
 		try {
@@ -69,6 +79,17 @@ public class SeleniumWrappers extends BaseTest{
 		action.moveToElement(element).clickAndHold(element).moveByOffset(x, y).release().perform();
 		
 	}	
+	
+	public void scrollVertically(int y) {
+		Actions action = new Actions(driver);
+		action.scrollByAmount(0, y).perform();
 		
+	}
+	
+	public void scrollHorizontally(int x) {
+		Actions action = new Actions(driver);
+		action.scrollByAmount(x, 0).perform();
+		
+	}
 	
 }
