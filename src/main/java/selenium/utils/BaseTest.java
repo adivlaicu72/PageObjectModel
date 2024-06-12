@@ -2,6 +2,7 @@ package selenium.utils;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
@@ -10,6 +11,8 @@ import org.testng.annotations.BeforeClass;
 public class BaseTest {
 
 	public static WebDriver driver;
+	public JavascriptExecutor jse;
+	
 	
 	@BeforeClass
 	public void setup() {
@@ -19,6 +22,7 @@ public class BaseTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		driver.get("https://keybooks.ro");
+		jse = (JavascriptExecutor) driver;
 	}
 	
 	@AfterClass

@@ -92,4 +92,8 @@ public class SeleniumWrappers extends BaseTest{
 		
 	}
 	
+	public WebElement getWebElement(By locator) {
+		return driver.findElement(locator);
+	}
+	
 }
