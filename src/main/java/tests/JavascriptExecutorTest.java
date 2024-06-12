@@ -43,7 +43,7 @@ public class JavascriptExecutorTest extends BaseTest{
 		driver.get(driver.getCurrentUrl());
 	}
 		
-		@Test
+		//@Test
 		public void example2() throws InterruptedException {
 			MenuPage menu = new MenuPage(driver);
 		/*	JavascriptExecutor jse = (JavascriptExecutor) driver;
@@ -86,10 +86,51 @@ public class JavascriptExecutorTest extends BaseTest{
 			
 			jse.executeScript("document.getElementsByClassName('post_title')[0].childNodes[0].click()");
 			
+			//alternativa pentru get Current URL
 			String currentUrl = jse.executeScript("return document.URL").toString();
 			System.out.println(currentUrl);
 			assertEquals(currentUrl, "https://keybooks.ro/shop/a-hundred-and-one-receipes/");
 			
+			//alternativa pentru getTitle()
+			String pagetTitle = jse.executeScript("return document.title").toString();
+			System.out.println(pagetTitle);
+			
+			
+			jse.executeScript("document.getElementById('tab-title-reviews').children[0].click()");
+			jse.executeScript("window.scrollBy(0, 900)");
+			
+			//alternativa pentru isSelected
+			String isSelectedAfterClick = jse.executeScript(
+					"return document.getElementById('wp-comment-cookies-consent').checked").toString();
+			
+			System.out.println(isSelectedAfterClick);
+			
+			//alternativa pentru isEnabled()
+			String isEnabled = jse.executeScript
+					("return document.getElementById('author').disabled").toString();
+			
+			System.out.println(isEnabled);
+			
+		}
+		
+		@Test
+		public void example3() {
+			
+			System.out.println(driver.getTitle());
+			
+			String schimbTitlulPaginii = "window.obj = function(){ document.title = 'Am schimbat titlul!'};"
+					+ "window.obj.call();";
+			
+			jse.executeScript(schimbTitlulPaginii);
+			
+			System.out.println(driver.getTitle());
+			String jsHover = "var obj = document.createEvent('MouseEvent');"
+					+ "obj.initMouseEvent('mouseover', true);"
+					+ "arguments[0].dispatchEvent(obj);";
+			MenuPage menu =  new MenuPage(driver);
+			
+			jse.executeScript(jsHover, menu.getWebElement(menu.blogLink));
+			jse.executeScript(jsHover, menu.getWebElement(menu.aboutLink));
 			
 		}
 	
