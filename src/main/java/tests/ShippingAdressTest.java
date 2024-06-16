@@ -30,6 +30,7 @@ public class ShippingAdressTest extends BaseTest{
 		shippingAddressPage.click(shippingAddressPage.shippingbilling);
 		shippingAddressPage.click(shippingAddressPage.shippingbillingAddButton);	
 		
+		
 		Select selectedCountry = new Select(driver.findElement(shippingAddressPage.country));
 		shippingAddressPage.click(shippingAddressPage.countryDropdown);
 		selectedCountry.selectByIndex(41);

@@ -39,7 +39,6 @@ public class SeleniumWrappers extends BaseTest{
 		}	
 	}
 	
-	
 	public void sendKeys(By locator, String text) {
 		
 		try {
@@ -95,5 +94,7 @@ public class SeleniumWrappers extends BaseTest{
 	public WebElement getWebElement(By locator) {
 		return driver.findElement(locator);
 	}
+	
+	
 	
 }
