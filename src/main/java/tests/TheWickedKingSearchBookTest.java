@@ -4,9 +4,6 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
-
-import framework.utils.PropertiesFileProcessor;
-import page.objects.LoginPage;
 import page.objects.MenuPage;
 import page.objects.TheWickedKingPage;
 import selenium.utils.BaseTest;

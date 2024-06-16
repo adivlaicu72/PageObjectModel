@@ -30,6 +30,10 @@ public class MenuPage extends SeleniumWrappers{
 	public By blogSubMenuPostFormats = By.xpath("//a[contains(text(), 'Post Formats')]");
 	public By iconSearch = By.cssSelector("div[class='top_panel_middle'] button[class*='icon-search']");
 	public By searchField = By.cssSelector("div[class='top_panel_middle'] input");
+	public By galleryFormat = By.xpath("//a[contains(text(), 'Gallery Format')]");
+	
+
+	
 	
 	
 	
