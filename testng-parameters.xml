@@ -6,12 +6,8 @@
     
     <test name="test" >    
         <classes>
-            <class name="tests.LoginTest" >
-              <methods>
-				<exclude name = "validLoginTest" />
-				<include name =  "invalidLoginTest"></include>
-              </methods>
-
+            <class name="tests.DataProviderExample" >
+              
             
             </class>
               
