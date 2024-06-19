@@ -1,10 +1,7 @@
 package selenium.utils;
 
-<<<<<<< HEAD
-=======
 import java.io.File;
 import java.text.SimpleDateFormat;
->>>>>>> curs27
 import java.time.Duration;
 import java.util.Date;
 
@@ -19,13 +16,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-<<<<<<< HEAD
-=======
+
 import com.google.common.io.Files;
 
-
-
->>>>>>> curs27
 public class BaseTest {
 
 	public static WebDriver driver;
@@ -39,19 +32,10 @@ public class BaseTest {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-<<<<<<< HEAD
-	//	driver.get("https://keybooks.ro");
-=======
-		//driver.get("https://keybooks.ro");
->>>>>>> curs27
 		driver.get(url);
 		jse = (JavascriptExecutor) driver;
 	}
-	
-<<<<<<< HEAD
-=======
 
->>>>>>> curs27
 	@AfterClass(alwaysRun = true)
 	public void tearDown() throws InterruptedException  {
 		Thread.sleep(5000);//bad practice
@@ -75,9 +59,7 @@ public class BaseTest {
 				e.printStackTrace();
 			}
 			
-		}
-		
-		
+		}	
 		
 	}
 	
