@@ -7,7 +7,6 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,9 +14,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
-
-import com.google.common.io.Files;
-import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 
 
 
@@ -51,7 +47,7 @@ public class BaseTest {
 		if(result.getStatus() == ITestResult.FAILURE) {
 			
 			TakesScreenshot obj = (TakesScreenshot) driver;
-			File picture = obj.getScreenshotAs(OutputType.FILE);
+			File picture = obj.getScreenshotAs(OutputType.FILE)
 			String timestamp = new SimpleDateFormat("yyyy.MM.dd.hh.mm.ss").format(new Date());
 			
 			
