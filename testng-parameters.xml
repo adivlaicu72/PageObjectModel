@@ -6,7 +6,7 @@
     
     <test name="test" >    
         <classes>
-            <class name="tests.WindowHandleExample" >
+            <class name="tests.DataProviderExample" >
               
             
             </class>
