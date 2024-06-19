@@ -43,5 +43,11 @@ public class MenuPage extends SeleniumWrappers{
 	
 	
 	//metode
+	
+	public void search (String searchValue) {
+		click(iconSearch);
+		sendKeys(searchField, searchValue);
+		click(iconSearch);
+	}
 
 }
