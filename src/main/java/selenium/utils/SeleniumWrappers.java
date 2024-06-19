@@ -26,7 +26,7 @@ public class SeleniumWrappers extends BaseTest{
 	 * 2.retry mechanism for NoSuchElement 
 	 * @param locator
 	 */
-	public void click(By locator) {
+	public void click(By locator) { //clasa By se importa
 	
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
