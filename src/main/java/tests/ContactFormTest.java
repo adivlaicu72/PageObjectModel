@@ -12,11 +12,11 @@ import selenium.utils.BaseTest;
 
 public class ContactFormTest extends BaseTest {
 	
-	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credential.properties");
-	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credential.properties");
+	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credentials.properties");
+	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credentials.properties");
 
 	
-	@Test
+	@Test(groups = "UserManagementFunctionality")
 	public void sendMessageTest() {
 		MenuPage menuPage = new MenuPage(driver);
 		menuPage.click(menuPage.loginLink);
@@ -35,7 +35,6 @@ public class ContactFormTest extends BaseTest {
 		assertEquals(contactPage.getElementText(contactPage.sentMsg), 
 				"Thank you for your message. It has been sent.");
 	}
-	
 	
 
 }

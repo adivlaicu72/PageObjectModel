@@ -1,20 +1,19 @@
-<!--comment-->
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Suite1" >
-
-<parameter name = "appUrl" value="https://keybooks.ro" />
+	
+	<parameter name = "appUrl" value="https://keybooks.ro" />
     
-    <test name="test" >    
-        <classes>
-            <class name="tests.LoginTest" >
-              <methods>
-				<exclude name = "validLoginTest" />
-				<include name =  "invalidLoginTest"></include>
-              </methods>
-
-            
-            </class>
-              
-        </classes>
-    </test>   
+    <test name="test" >  
+    <groups>
+		<run>
+		   <include name = "UserManagementFunctionality" />
+		   <exclude name = "ShopFunctionality" />
+		</run>
+	</groups>
+	
+	<packages>
+	 	<package name = "tests" />
+	 </packages>
+    </test>
+    
 </suite>
