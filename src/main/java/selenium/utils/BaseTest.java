@@ -36,7 +36,6 @@ public class BaseTest {
 		driver.get(url);
 		jse = (JavascriptExecutor) driver;
 	}
-	
 
 	@AfterClass(alwaysRun = true)
 	public void tearDown() throws InterruptedException  {
