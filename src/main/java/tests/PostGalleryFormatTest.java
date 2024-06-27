@@ -1,4 +1,6 @@
 package tests;
+import static org.testng.Assert.assertEquals;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -36,10 +38,9 @@ public class PostGalleryFormatTest extends BaseTest{
 		.sendKeys(Keys.TAB, "email@email.com")
 		.sendKeys(Keys.TAB, "test.com")
 		.sendKeys(Keys.TAB, Keys.ENTER)
-		.perform();
+		.perform();	
 		
-		
-		
+		assertEquals(galleryFormatPage.getElementText(galleryFormatPage.comment), "Message");
 		
 	
 	}

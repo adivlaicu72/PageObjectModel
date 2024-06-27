@@ -17,6 +17,8 @@ public class ShopPage extends SeleniumWrappers{
 	public By sortingDropdown = By.name("orderby");
 	public By priceSliderLeft = By.xpath("//span[@style='left: 0%;']");
 	public By priceSliderRight = By.xpath("//span[@style='left: 100%;']");
+	public By bookPrice = By.xpath("//span[@class='woocommerce-Price-amount amount']");
+	
 	
 	public void selectByValue(String value) {
 		WebElement element = driver.findElement(sortingDropdown);

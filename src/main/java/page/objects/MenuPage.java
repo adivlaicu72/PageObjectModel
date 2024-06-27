@@ -32,6 +32,10 @@ public class MenuPage extends SeleniumWrappers{
 	public By searchField = By.cssSelector("div[class='top_panel_middle'] input");
 	public By galleryFormat = By.xpath("//a[contains(text(), 'Gallery Format')]");
 	
+	public By iconFacebook = By.xpath("//span[@class='icon-facebook']");
+	public By iconTwitter = By.xpath("//span[@class='icon-twitter']");
+	public By iconInstagram = By.xpath("//span[@class='icon-instagramm']");
+	
 
 	
 	

@@ -24,8 +24,7 @@ public class DataProviderClass {
 		data[4][0] = "Storm";
 		data[4][1] = "books7.jpg";
 		
-		return data;
-		
+		return data;	
 		
 	}
 }

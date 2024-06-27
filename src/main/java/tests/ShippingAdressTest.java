@@ -1,7 +1,6 @@
 package tests;
 
 import static org.testng.Assert.assertEquals;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import framework.utils.PropertiesFileProcessor;
 import page.objects.LoginPage;
@@ -30,16 +29,10 @@ public class ShippingAdressTest extends BaseTest{
 		shippingAddressPage.click(shippingAddressPage.shippingbilling);
 		shippingAddressPage.click(shippingAddressPage.shippingbillingAddButton);	
 		
-		
-		Select selectedCountry = new Select(driver.findElement(shippingAddressPage.country));
-		shippingAddressPage.click(shippingAddressPage.countryDropdown);
-		selectedCountry.selectByIndex(41);
-		assertEquals(selectedCountry.getFirstSelectedOption().getText(), "Canada");
-		
-		Select selectedProvince = new Select(driver.findElement(shippingAddressPage.province));
-		shippingAddressPage.click(shippingAddressPage.provinceDropdown);
-		selectedProvince.selectByValue("NL");
-		assertEquals(selectedProvince.getFirstSelectedOption().getText(), "Newfoundland and Labrador");
-		
+		shippingAddressPage.selectDropDownValue(shippingAddressPage.country, 41);
+        assertEquals(shippingAddressPage.getFirstSelectedOption(shippingAddressPage.country), "Canada");
+           
+        shippingAddressPage.selectDropDownValue(shippingAddressPage.province, "NL");
+        assertEquals(shippingAddressPage.getFirstSelectedOption(shippingAddressPage.province), "Newfoundland and Labrador");
 	}
 }

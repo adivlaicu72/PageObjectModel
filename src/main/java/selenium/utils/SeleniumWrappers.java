@@ -1,13 +1,14 @@
 package selenium.utils;
 
 import java.time.Duration;
+import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumWrappers extends BaseTest{
@@ -103,5 +104,29 @@ public class SeleniumWrappers extends BaseTest{
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
         return driver.findElement(locator).isDisplayed();
    }
+	
+	public void selectDropDownValue(By locator, Object selection) {
+        
+        Select select = new Select(getWebElement(locator));
+        
+        if(selection.getClass() == Integer.class) {
+            select.selectByIndex((int) selection);
+        }else if(selection.getClass() == String.class){
+            select.selectByValue((String) selection);
+        }
+   }
+	
+	 public String getFirstSelectedOption(By locator) {
+         
+         Select select = new Select(getWebElement(locator));
+         return select.getFirstSelectedOption().getText();
+    }
+	 
+	 public List<WebElement> getWebElementList(By locator) {
+         return driver.findElements(locator);
+    }
+	
+	
+	
 	
 }

@@ -12,8 +12,8 @@ import selenium.utils.BaseTest;
 
 public class DataProviderExample extends BaseTest {
 	
-	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credentials.properties");
-	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credentials.properties");
+	String USER = PropertiesFileProcessor.readPropertiesFile("user", "credential.properties");
+	String PASS = PropertiesFileProcessor.readPropertiesFile("pass", "credential.properties");
 
 	
 	@DataProvider//(name = "numeSpecific")
@@ -29,13 +29,11 @@ public class DataProviderExample extends BaseTest {
 		data[1][0] = USER;
 		data[1][1] = "ParolaGresita";
 		data[1][2] = false;
-
-		
+	
 		data[2][0] = USER;
 		data[2][1] = PASS;
 		data[2][2] = true;
-
-		
+	
 		data[3][0] = "UserGresit";
 		data[3][1] = PASS;
 		data[3][2] = false;
@@ -51,6 +49,7 @@ public class DataProviderExample extends BaseTest {
 		menuPage.click(menuPage.loginLink);
 		
 		LoginPage loginPage = new LoginPage(driver);
+		
 		loginPage.loginInApp(username, password);
 		
 		if(success) {
@@ -60,9 +59,7 @@ public class DataProviderExample extends BaseTest {
 			assertTrue(loginPage.checkMsgIsDisplayed(loginPage.errorLoginMsg));
 			loginPage.click(loginPage.closeLoginBtn);
 		}
-			
-		
+				
 	}
 	
-
 }
