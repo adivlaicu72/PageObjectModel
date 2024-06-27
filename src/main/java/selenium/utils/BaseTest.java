@@ -35,7 +35,7 @@ public class BaseTest {
 	
 	@Parameters({"appUrl"})
 	@BeforeClass(alwaysRun = true)
-	//@BeforeMethod(alwaysRun = true)
+	//@BeforeMethod(alwaysRun = true) --> cookies handling tests.CookiesLogin
 	public void setup(String url) {
 		
 		driver = new ChromeDriver();
@@ -46,8 +46,8 @@ public class BaseTest {
 		jse = (JavascriptExecutor) driver;
 	}
 
-	
-	//@AfterMethod(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
+	//@AfterMethod(alwaysRun = true) --> cookies handling tests.CookiesLogin
 	public void tearDown() throws InterruptedException  {
 		Thread.sleep(5000);//bad practice
 		driver.quit();
